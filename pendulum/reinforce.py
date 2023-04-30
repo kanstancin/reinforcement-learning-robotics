@@ -67,7 +67,7 @@ class REINFORCE:
         # minimize -1 * prob * reward obtained
         for log_prob, delta in zip(self.probs, deltas):
             loss += log_prob.mean() * delta * (-1)
-
+        print(loss)
         # Update the policy network
         self.optimizer.zero_grad()
         loss.backward()
